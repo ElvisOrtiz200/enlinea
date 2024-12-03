@@ -1,101 +1,127 @@
-import Image from "next/image";
+"use client";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <div className="font-sans leading-relaxed">
+            {/* Encabezado */}
+            <header className="bg-blue-600 text-white py-12 text-center">
+                <h1 className="text-4xl font-bold">Sistema de Ayuda en Línea</h1>
+                <p className="mt-4 text-xl">Asistencia para el Sistema Académico y Administrativo del Colegio Nikola Tesla</p>
+            </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Navegación */}
+            <nav className="flex justify-center bg-gray-100 py-4 shadow-md">
+                <a href="#inicio" className={navLinkStyle}>Inicio</a>
+                <a href="#sistemaWeb" className={navLinkStyle}>Sistema Web</a>
+                <a href="#sistemaMovil" className={navLinkStyle}>Sistema Móvil</a>
+                <a href="#asistencia" className={navLinkStyle}>Asistencia</a>
+                <a href="#contacto" className={navLinkStyle}>Contáctanos</a>
+            </nav>
+
+            {/* Secciones */}
+            <main className="px-6 py-12">
+                {/* Inicio */}
+                <section id="inicio" className="mb-16 p-8 bg-gray-50 rounded-lg shadow-md">
+                    <h2 className="text-3xl text-blue-600 font-semibold mb-4">Bienvenido</h2>
+                    <p className="text-lg">
+                        Te damos la bienvenida a la página de ayuda en línea del sistema académico y administrativo del
+                        *Colegio Nikola Tesla*. Aquí encontrarás la información necesaria para utilizar nuestras
+                        herramientas de manera efectiva, tanto para docentes como para personal administrativo.
+                    </p>
+                </section>
+
+                {/* Sistema Web */}
+                <section id="sistemaWeb" className="mb-16 p-8 bg-gray-50 rounded-lg shadow-md">
+                    <h2 className="text-3xl text-blue-600 font-semibold mb-4">Sistema Web para Docentes</h2>
+                    <p className="text-lg mb-4">
+                        El sistema web está diseñado para ayudar a los docentes a gestionar todas las actividades académicas
+                        de manera eficiente. Estas son algunas de las funcionalidades más destacadas:
+                    </p>
+                    <ul className="list-disc pl-6 text-lg">
+                        <li>
+                            <strong>Registro de Asistencia Automático:</strong> El docente puede registrar la asistencia de
+                            los estudiantes utilizando reconocimiento facial. Solo debe hacer clic en Tomar Asistencia y
+                            activar la cámara.
+                        </li>
+                        <li>
+                            <strong>Gestión de Notas y Actividades:</strong> Los docentes pueden registrar las notas, realizar
+                            seguimientos y asignar tareas a los estudiantes.
+                        </li>
+                        <li>
+                            <strong>Generación de Reportes:</strong> El sistema permite generar reportes de rendimiento
+                            académico de los estudiantes, facilitando la toma de decisiones.
+                        </li>
+                    </ul>
+                </section>
+
+                {/* Sistema Móvil */}
+                <section id="sistemaMovil" className="mb-16 p-8 bg-gray-50 rounded-lg shadow-md">
+                    <h2 className="text-3xl text-blue-600 font-semibold mb-4">Sistema Móvil para Personal Administrativo</h2>
+                    <p className="text-lg mb-4">
+                        El sistema móvil está destinado para el personal administrativo del colegio, permitiéndoles llevar
+                        a cabo diversas tareas de forma eficiente:
+                    </p>
+                    <ul className="list-disc pl-6 text-lg">
+                        <li>
+                            <strong>Asistencia por Ubicación:</strong> El sistema verifica la ubicación del personal mediante
+                            coordenadas GPS para confirmar su presencia en el colegio y permitir el registro de asistencia.
+                        </li>
+                        <li>
+                            <strong>Gestión de Horarios:</strong> El personal puede consultar y modificar los horarios del
+                            colegio, así como gestionar otros aspectos administrativos desde su móvil.
+                        </li>
+                        <li>
+                            <strong>Comunicación con Docentes:</strong> El personal puede comunicarse rápidamente con los
+                            docentes para resolver problemas administrativos o coordinaciones urgentes.
+                        </li>
+                    </ul>
+                </section>
+
+                {/* Asistencia */}
+                <section id="asistencia" className="mb-16 p-8 bg-gray-50 rounded-lg shadow-md">
+                    <h2 className="text-3xl text-blue-600 font-semibold mb-4">Sistema de Asistencia Inteligente</h2>
+                    <p className="text-lg mb-4">
+                        En nuestro sistema, tanto el personal administrativo como los docentes pueden gestionar la asistencia
+                        de manera automatizada:
+                    </p>
+                    <ul className="list-disc pl-6 text-lg">
+                        <li>
+                            <strong>Para Docentes:</strong> Solo deben hacer clic en Tomar Asistencia, activar la cámara y
+                            los estudiantes pasarán frente a la misma. El sistema los identificará automáticamente.
+                        </li>
+                        <li>
+                            <strong>Para Personal Administrativo:</strong> El registro de asistencia está vinculado a la
+                            geolocalización. Si el personal está en el colegio, podrá registrar su presencia fácilmente.
+                        </li>
+                    </ul>
+                </section>
+
+                {/* Contacto */}
+                <section id="contacto" className="mb-16 p-8 bg-gray-50 rounded-lg shadow-md">
+                    <h2 className="text-3xl text-blue-600 font-semibold mb-4">Contáctanos</h2>
+                    <p className="text-lg mb-4">
+                        Si necesitas más información o tienes alguna pregunta, no dudes en contactarnos. Estamos aquí para
+                        ayudarte.
+                    </p>
+                    <p className="text-lg">
+                        <strong>Email:</strong> soporte@colegionikolatesla.com
+                    </p>
+                    <p className="text-lg">
+                        <strong>Teléfono:</strong> +51 123 456 789
+                    </p>
+                    <p className="text-lg">
+                        <strong>Dirección:</strong> Av. La Merced 234, Laredo, La Libertad, Perú
+                    </p>
+                </section>
+            </main>
+
+            {/* Pie de página */}
+            <footer className="bg-blue-600 text-white py-4 text-center mt-16">
+                <p>&copy; 2024 Colegio Nikola Tesla. Todos los derechos reservados.</p>
+            </footer>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
+
+const navLinkStyle = "text-blue-600 no-underline mx-6 font-bold text-lg hover:text-blue-800 transition-colors";
+
